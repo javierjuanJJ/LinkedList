@@ -22,10 +22,9 @@ e.next = f;
 
 
 const printLinkedList = (head) => {
-  let current = head;
-  while (current.next != null){
-      console.log(current.val);
-      current = current.next;
+  if (head != null){
+    printLinkedList(head.next);
+    console.log(head.val);
   }
 }
 
