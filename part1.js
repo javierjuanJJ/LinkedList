@@ -28,20 +28,15 @@ const printLinkedList = (head) => {
   }
 }
 
-const linkedListValues = (head) => {
-  const values = [];
-  fillValues(head, values);
-  return values;
-}
+const sumList = (head) => {
+  let sum =0;
+  let current = head;
 
-const fillValues = (head, values) => {
-    if (head === null){
-        return;
-    }
-    values.push(head.val);
-    fillValues(head.next, values);
-
+  while (current != null){
+      sum += current.val;
+      current = current.next;
+  }
+  return sum;
 }
 
 printLinkedList(a);
-linkedListValues(a);
