@@ -29,14 +29,21 @@ const printLinkedList = (head) => {
 }
 
 const sumList = (head) => {
-  let sum =0;
-  let current = head;
-
-  while (current != null){
-      sum += current.val;
-      current = current.next;
+  if (head === null){
+      return 0;
   }
-  return sum;
+  return head.val + sumList(head.next);
 }
 
 printLinkedList(a);
+
+const linkedListFind = (head, target) => {
+    let current = head;
+    while (current !== null) {
+        if (current.val === target) return true;
+        current = current.next;
+    }
+    return false;
+};
+
+console.log(linkedListFind(a, "c"));
