@@ -37,10 +37,14 @@ const sumList = (head) => {
 
 printLinkedList(a);
 
-const linkedListFind = (head, target) => {
-    if (head === null) return false;
-    if (head.val === target) return true;
-    return linkedListFind(head.next, target);
+const getNodeValue = (head, index) => {
+    let count = 0;
+    let current = head;
+    while (current !== null) {
+        if (count === index) return current.val;
+        current = current.next;
+        count += 1;
+    }
+    return null;
 };
-
-console.log(linkedListFind(a, "c"));
+console.log("Node 2 : " + getNodeValue(a,2));
